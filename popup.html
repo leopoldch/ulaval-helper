@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <title>Cours Filter</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    /*
+      Université Laval colour palette (see documentation【362018063329747†L116-L123】):
+      - Primary red:    #e30513
+      - Primary yellow: #ffc103
+      - Dark grey:      #515151
+    */
+    :root {
+      --laval-red: #e30513;
+      --laval-yellow: #ffc103;
+      --laval-dark-grey: #515151;
+      --laval-light-grey: #d9d9d9;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+      padding: 16px;
+      background: #ffffff;
+      min-width: 240px;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      border-bottom: 4px solid var(--laval-yellow);
+      padding-bottom: 8px;
+      margin-bottom: 12px;
+    }
+
+    header img {
+      width: 24px;
+      height: 24px;
+      margin-right: 8px;
+    }
+
+    header h1 {
+      font-size: 16px;
+      font-weight: bold;
+      color: var(--laval-dark-grey);
+      margin: 0;
+    }
+
+    .actions {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    button {
+      flex: 1;
+      padding: 10px 0;
+      border: none;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+
+    #filter {
+      background: var(--laval-red);
+      color: white;
+    }
+
+    #filter:hover {
+      background: #c10c11;
+    }
+
+    #reset {
+      background: var(--laval-dark-grey);
+      color: white;
+    }
+
+    #reset:hover {
+      background: #333333;
+    }
+
+    #status {
+      font-size: 12px;
+      color: var(--laval-dark-grey);
+      min-height: 1.2em;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAIAAADYYG7QAAACUUlEQVR4nO2XO6viQBSAk9VoIUpga40KaSxULCy0UsFGK/+CICg2Frb2go9CtBB8/QIr0cLCi5UiIhYKBvGxjVgo+ACTELLFQvC6m4w35K4W+ao54WTmy0lmMgOzHwronfjxaoFHZCEQshAIWQjE2wnBLMu+2uETb1chWQiELARCFgKhfDJvOp0Oh8P5fH44HC6XC4IgKIpiGGaz2Vwul06n4zKTyeRyuRTuLR6Pe71ekULr9bpYLD6MwTDMbrfb7XaDwaBWq1WrVY1G88RzgQEIDYfDXC5HUZRADk3TDMNIYgMQWq1W+Xyes4Fh2OPx+P1+vV4Pw/B+vx+NRq1W63g88vVgt9tTqZRkQpVKhSRJLozFYj6fjwsNBoPBYAgGg/V6HYbhL40qRoggiNlsxoVut/vehkOlUkUiEalsIIFpPx6P78NAICDhqALwVmiz2XBtBEFwHBfR+2QyCYVCDxe1Wm2j0eC7hbdCp9PpvguF4j+dJ59aqSX8ZoHwvrL7xfd0OjEMI6JIIqY9b4UwDOPaNE0TBPFVG3HwCjkcjvuw3W5/vwwECQjhOG6xWLiw3+/3er2/0yiKKpfL5/P524UgCAqHw2q1mgsLhUKpVFosFrfbjSTJ7XbbbDaj0Win05Hw6CL06zCZTIlEIpvN0jQNQRDLst1ut9vtSjX2PwFMe6fTmU6nzWazQA6CIBKuUuD9kNFozGQy0+l0MBj82aBdr1elUomiqNFotFqtbrdbqs0QJJ9cwchCIN5OCP6F/Hy1wyferkKyEAhZCIQsBOI3lgfOGBbfUBgAAAAASUVORK5CYII=" alt="" />
+    <h1>Cours Filter</h1>
+  </header>
+  <div class="actions">
+    <button id="filter" title="Garder uniquement les cartes avec une session">Filtrer (session)</button>
+    <button id="reset" title="Réafficher toutes les cartes">Défiltrer</button>
+  </div>
+  <div id="status"></div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
