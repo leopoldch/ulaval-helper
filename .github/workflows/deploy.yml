@@ -24,7 +24,6 @@ jobs:
 
       - name: Create ZIP artifact
         run: |
-          cd ulaval-helper
           web-ext build --source-dir . 
           
       - name: Publish to Firefox Add-ons
