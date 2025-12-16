@@ -22,6 +22,24 @@ jobs:
           node-version: '20'
       - run: npm install -g web-ext
 
+      - name: Update manifest.json Version
+        if: github.event_name == 'release'
+        run: |
+          RELEASE_VERSION=$(echo ${{ github.event.release.tag_name }} | sed 's/^v//')
+          MANIFEST_PATH="./ulaval-helper/manifest.json"
+          
+          if [ -z "$RELEASE_VERSION" ]; then
+            echo "Pas de tag de release trouvé. La version du manifest ne sera pas modifiée."
+          else
+            echo "Mise à jour de la version du manifest à $RELEASE_VERSION"
+            sudo apt-get install jq -y
+            
+            jq --arg version "$RELEASE_VERSION" '.version = $version' $MANIFEST_PATH > temp.json
+            mv temp.json $MANIFEST_PATH
+            
+            echo "Version mise à jour avec succès dans $MANIFEST_PATH"
+          fi
+
       - name: Create ZIP artifact
         run: |
           web-ext build --source-dir . 
