@@ -30,7 +30,7 @@ jobs:
         uses: wdzeng/firefox-addon@v1
         with:
           addon-guid: cours-filter@exemple.tld
-          xpi-path: ulaval-helper/web-ext-artifacts/ulaval_helper-*.zip
+          xpi-path: web-ext-artifacts/ulaval_helper-*.zip
           jwt-issuer: ${{ secrets.FIREFOX_JWT_ISSUER }}
           jwt-secret: ${{ secrets.FIREFOX_JWT_SECRET }}
           channel: listed
@@ -39,7 +39,7 @@ jobs:
         uses: wdzeng/chrome-extension@v1
         with:
           extension-id: ${{ secrets.CHROME_EXTENSION_ID }}
-          zip-path: ulaval-helper/web-ext-artifacts/ulaval_helper-*.zip
+          zip-path: web-ext-artifacts/ulaval_helper-*.zip
           client-id: ${{ secrets.CHROME_CLIENT_ID }}
           client-secret: ${{ secrets.CHROME_CLIENT_SECRET }}
           refresh-token: ${{ secrets.CHROME_REFRESH_TOKEN }}
