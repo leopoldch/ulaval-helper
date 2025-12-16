@@ -18,11 +18,11 @@ The extension is available for both Chrome and Firefox.
 
 ### Google Chrome (Chrome Web Store)
 
-[Link to the Chrome Web Store]
+[Here's a link to the Chrome Web Store](https://chromewebstore.google.com/detail/ulaval-helper/nckffafigjnlcdpnlgcmgkmgnkiaeiam)
 
 ### Mozilla Firefox (Mozilla Add-ons)
+[Here's a link to the Firefox Add-ons Store](https://addons.mozilla.org/fr/firefox/addon/ulaval-helper)
 
-[Link to Mozilla Add-ons (AMO)]
 
 ---
 
